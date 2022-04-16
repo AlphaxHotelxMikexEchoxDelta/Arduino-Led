@@ -3,16 +3,19 @@ int led1 = 3 ;
 int led2 = 2 ;
 
 void Time(int sec){
-  int mins = sec/10000 ;
+  int mins = sec*1000 ;
   delay(mins) ;
 }
 
 void Led_Clignote(){
   digitalWrite(led1, HIGH);
-  Time(500);
+  Time(2);
+  digitalWrite(led2, LOW);
+  Time(3);
   digitalWrite(led1, LOW);
-  Time(500);
+  Time(2);
   digitalWrite(led2, HIGH);
+  Time(3);
 }
 
 void setup() {
